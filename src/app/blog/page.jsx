@@ -1,0 +1,5 @@
+import PageHero from "@/components/ui/PageHero";
+import ConsultationCTA from "@/components/ui/ConsultationCTA";
+import { blogPosts } from "@/data/content";
+export const metadata = { title: "Astrology Blog", description: "Approachable guides to Vedic astrology, compatibility and Vastu." };
+export default function BlogPage() { return <><PageHero title="Astrology Journal" titleHindi="ज्योतिष लेख" description="Simple, grounded explanations of traditional astrology concepts for everyday readers." /><section className="section"><div className="container"><div className="post-grid">{blogPosts.map((post) => <article className="post-card" key={post.slug}><div className="meta">{post.category} · {post.readTime}</div><h2>{post.titleHindi}<span className="hindi-sub">{post.title}</span></h2><p>{post.excerpt}</p><span className="text-link">लेख शीघ्र उपलब्ध होगा · Coming soon</span></article>)}</div><p className="sample-note">These are starter article topics. Add verified long-form content before enabling article links.</p></div></section><ConsultationCTA /></>; }

@@ -1,0 +1,5 @@
+import Link from "next/link";
+
+export default function AboutSection() {
+  return <section className="section section-soft"><div className="container split"><div className="about-art" aria-label="Traditional Vedic astrology illustration" /><div className="content-block"><div className="eyebrow">परंपरा और स्पष्टता · Tradition & clarity</div><h2>हमारे बारे में<span className="hindi-sub">About Shri Jyotish Seva</span></h2><p className="lead">ज्योतिष को भय नहीं, समझ और आत्मचिंतन का माध्यम बनाना हमारा उद्देश्य है।</p><p>Shri Jyotish Seva connects the profound wisdom of traditional Vedic astrology with the real questions of modern life. Every consultation is designed to explain patterns clearly while respecting your freedom to choose.</p><ul className="check-list"><li>Clear, conversational guidance</li><li>Traditional methods with practical context</li><li>Respectful and confidential consultations</li></ul><Link className="btn btn-primary" href="/about">और जानें · Know More →</Link></div></div></section>;
+}

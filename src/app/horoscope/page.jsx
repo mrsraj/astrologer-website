@@ -1,0 +1,5 @@
+import PageHero from "@/components/ui/PageHero";
+import ConsultationCTA from "@/components/ui/ConsultationCTA";
+import { horoscopeCopy, zodiacSigns } from "@/data/content";
+export const metadata = { title: "Horoscope", description: "A concise reflection for all twelve zodiac signs." };
+export default function HoroscopePage() { return <><PageHero title="Zodiac Reflections" titleHindi="राशिफल चिंतन" description="A gentle reflection for each sign. Read it as a prompt for awareness, not a fixed prediction." /><section className="section"><div className="container"><div className="horoscope-grid">{zodiacSigns.map((sign) => <article className="horoscope-card" id={sign.slug} key={sign.slug}><span className="zodiac-symbol" aria-hidden="true">{sign.symbol}</span><div><h2>{sign.hindi} · {sign.name}</h2><span className="eyebrow">Reflection · चिंतन</span></div><p>{horoscopeCopy[sign.slug]}</p></article>)}</div><p className="sample-note">These are general editorial reflections, not dated predictions or personal advice.</p></div></section><ConsultationCTA /></>; }

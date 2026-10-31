@@ -1,0 +1,7 @@
+import PageHero from "@/components/ui/PageHero";
+import ConsultationCTA from "@/components/ui/ConsultationCTA";
+
+export const metadata = { title: "About", description: "Our approach to traditional Vedic astrology guidance." };
+export default function AboutPage() {
+  return <><PageHero title="About Us" titleHindi="हमारे बारे में" description="Traditional wisdom, explained with clarity and applied with care." /><section className="section"><div className="container split"><div className="about-art" aria-label="Om symbol representing Vedic knowledge" /><div className="content-block"><div className="eyebrow">Our approach · हमारा दृष्टिकोण</div><h2>परंपरा का सम्मान,<br />आपके निर्णयों का भी</h2><p className="lead">A consultation should help you understand a situation—not make you fearful of it.</p><p>We use the language and frameworks of Vedic astrology to explore patterns, timing and questions with you. The aim is to offer a calm perspective that can support thoughtful decisions in relationships, work, home and important beginnings.</p><ul className="check-list"><li>Questions explained in Hindi or English</li><li>Practical context alongside traditional interpretation</li><li>Confidential, respectful conversation</li><li>No guaranteed outcomes or fear-based claims</li></ul><div className="notice">Astrology is interpretive guidance. For medical, legal or financial decisions, please consult a qualified professional.</div></div></div></section><ConsultationCTA /></>;
+}
