@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { buildConsultationMessage, buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function WhatsAppForm({ mode = "booking", defaultService = "" }) {
   const [status, setStatus] = useState("");
@@ -17,7 +17,7 @@ export default function WhatsAppForm({ mode = "booking", defaultService = "" }) 
     const service = data.get("service") || "General enquiry";
     const birth = data.get("birth") || "Not provided";
     const city = data.get("city") || "Not provided";
-    const message = mode === "booking" ? `Namaste, I would like to request a consultation.\nName: ${name}\nPhone: ${phone}\nService: ${service}\nBirth details: ${birth}\nCity: ${city}\nQuestion: ${question}` : `Namaste, I have a website enquiry.\nName: ${name}\nPhone: ${phone}\nQuestion: ${question}`;
+    const message = mode === "booking" ? buildConsultationMessage({ name, phone, service, birth, city, question }) : `Namaste, I have a website enquiry.\nName: ${name}\nPhone: ${phone}\nQuestion: ${question}`;
     const url = buildWhatsAppUrl(site.phone, message);
     setStatus("Opening WhatsApp with your message…");
     const popup = window.open(url, "_blank");
